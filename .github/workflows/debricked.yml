@@ -15,6 +15,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install Debricked CLI
         run: |
+          # Convert GitHub's RUNNER_ARCH naming convention to match the ones we use for releases
           if [ "${RUNNER_ARCH}" == "X64" ]; then RUNNER_ARCH=x86_64; fi
           if [ "${RUNNER_ARCH}" == "X86" ]; then RUNNER_ARCH=i386; fi
           BIN_NAME=debricked
